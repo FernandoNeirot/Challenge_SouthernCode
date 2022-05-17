@@ -12,3 +12,10 @@ export const getPhotos = async() => {
     return res;
 }
 
+export const getPhotosByRover = async(type) => {
+    const res = await axios.get(`https://api.nasa.gov/mars-photos/api/v1/rovers/${type}/photos?sol=1000&page=1&api_key=${apiKey}`)
+    .then(res=>{
+        return res.data;
+    })
+    return res;
+}
